@@ -12,10 +12,10 @@ export default class App extends Component {
   };
   changeHandler = (e) => {
     // e : represents the Event
-    console.log(e);
-    console.log(e.target);
-    console.log(e.target.name);
-    console.log(e.target.type);
+    // console.log(e);
+    // console.log(e.target);
+    // console.log(e.target.name);
+    // console.log(e.target.type);
     console.log(e.target.name + " : " + e.target.value);
     // console.log("changeHandler called");
     this.setState({ [e.target.name]: e.target.value });
@@ -44,25 +44,28 @@ export default class App extends Component {
         <form>
           <label className="name">Name : </label>
           <input
+            placeholder="Enter your name"
             type="text"
             name="Name1"
-            value={this.state.Name}
+            // value={this.state.Name1}
             onChange={this.changeHandler}
           ></input>
           <br />
           <label className="dept">Department : </label>
           <input
+            placeholder="Enter your department"
             type="text"
             name="Department"
-            value={this.state.Department}
+            // value={this.state.Department}
             onChange={this.changeHandler}
           ></input>
           <br />
           <label className="ratg">Rating : </label>
           <input
+            placeholder="Enter your rating"
             type="number"
             name="Rating"
-            value={this.state.Rating}
+            // value={this.state.Rating}
             onChange={this.changeHandler}
           ></input>
           <br />
@@ -78,8 +81,8 @@ export default class App extends Component {
         <div className="mainbox container">
           {this.state.employees.map((value, index) => {
             return (
-              <span className="container box1">
-                <span key={index}>
+              <span key={index} className="container box1">
+                <span>
                   Name : {value.Name} | Department : {value.Department} | Rating
                   : {value.Rating}
                 </span>
